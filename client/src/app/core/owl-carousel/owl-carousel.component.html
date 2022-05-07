@@ -1,0 +1,15 @@
+
+<div class="row mt-5">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Latest products</h5>
+        <owl-carousel-o [options]="autoPlayExampleOptions">
+          <ng-template carouselSlide *ngFor="let slide of slidesStore" [id]="slide.id">
+            <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
