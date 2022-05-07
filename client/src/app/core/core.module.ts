@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
-import { LatestProductsComponent } from './latest-products/latest-products.component';
-
+import { OwlCarouselComponent } from './owl-carousel/owl-carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
     NavBarComponent,
-    LatestProductsComponent
+    OwlCarouselComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CarouselModule
   ],
   exports:[
     NavBarComponent,
-    LatestProductsComponent
+    OwlCarouselComponent
   ]
 })
 export class CoreModule { }
