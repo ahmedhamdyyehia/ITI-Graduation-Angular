@@ -56,6 +56,11 @@ export class ShopService {
   {
     return this.http.get<IProductType[]>(this.baseUrl + `products/types`);
   }
+
+  getLatestProduct()
+  {
+    return this.http.get<IProduct[]>(this.baseUrl + `products/lastadded`)
+  }
 }
 
 
