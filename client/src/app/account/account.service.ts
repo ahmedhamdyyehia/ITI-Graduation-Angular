@@ -63,6 +63,6 @@ export class AccountService {
     this.router.navigateByUrl('/');
   }
   checkEmailExists(email:string){
-    return this.http.get(this.baseUrl+'account/emailexistes?email='+email);
+    return this.http.get(this.baseUrl+'Account/emailexists?email='+email);
   }
 }
