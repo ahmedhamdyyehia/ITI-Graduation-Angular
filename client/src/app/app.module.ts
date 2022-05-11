@@ -9,13 +9,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import {NgxSpinnerModule} from 'ngx-spinner'
 import { LoadingInterceptor } from './core/intercepors/loading.interceptors';
+import { ErrorInterceptor } from './core/intercepors/error.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -24,6 +25,7 @@ import { LoadingInterceptor } from './core/intercepors/loading.interceptors';
     NgxSpinnerModule
   ],
   providers: [
+    {provide:HTTP_INTERCEPTORS , useClass: ErrorInterceptor , multi:true},
     {provide:HTTP_INTERCEPTORS , useClass: LoadingInterceptor , multi:true}
   ],
   bootstrap: [AppComponent]
