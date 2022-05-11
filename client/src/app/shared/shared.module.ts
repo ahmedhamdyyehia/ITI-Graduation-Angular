@@ -9,6 +9,11 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { StepperComponent } from './components/stepper/stepper.component';
+
+
+
 
 
 @NgModule({
@@ -17,14 +22,19 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     PagerComponent,
     OrderTotalsComponent,
     TextInputComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TextInputComponent,
+    StepperComponent
+    
   ],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    CdkStepperModule
   ],
   exports:[
     PaginationModule,
@@ -34,7 +44,10 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     ReactiveFormsModule,
     BsDropdownModule,
     TextInputComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TextInputComponent,
+    CdkStepperModule,
+    StepperComponent
   ]
 })
 export class SharedModule { }
