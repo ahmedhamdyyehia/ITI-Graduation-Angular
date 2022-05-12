@@ -27,7 +27,13 @@
 
                     </div>
                     <div class="col-12 py-5 mb-1">
-                        <div class="table-responsive">
+                        <app-basket-summary>
+                            (decrement)="decrementItemQuantity($event)"
+                            (increment)="incrementItemQuantity($event)"
+                            (remove)="removeBasketItem($event)"
+                            [items]="(basket$ | async).items"
+                        </app-basket-summary>
+                       <!-- <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -88,7 +94,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 

@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
+import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
+
 
 
 
@@ -22,6 +24,8 @@ import { StepperComponent } from './components/stepper/stepper.component';
     PagerComponent,
     OrderTotalsComponent,
     TextInputComponent,
+    StepperComponent,
+    BasketSummaryComponent,
     ErrorPageComponent,
     TextInputComponent,
     StepperComponent
@@ -32,6 +36,7 @@ import { StepperComponent } from './components/stepper/stepper.component';
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     ReactiveFormsModule,
+    CdkStepperModule,
     RouterModule,
     ReactiveFormsModule,
     CdkStepperModule
@@ -47,7 +52,8 @@ import { StepperComponent } from './components/stepper/stepper.component';
     ErrorPageComponent,
     TextInputComponent,
     CdkStepperModule,
-    StepperComponent
+    StepperComponent,
+    BasketSummaryComponent
   ]
 })
 export class SharedModule { }
