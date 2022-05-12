@@ -19,6 +19,7 @@ export class BasketComponent implements OnInit {
   }
 
   removeBasketItem(item: IBasketItem) {
+    console.log("removed");
     this.basketService.removeItemFromBasket(item);
   }
 

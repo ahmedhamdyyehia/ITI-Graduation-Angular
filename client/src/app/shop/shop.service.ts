@@ -16,8 +16,6 @@ import { environment } from 'src/environments/environment';
 export class ShopService {
   
   baseUrl = environment.apiUrl;
-
-  //private baseUrl = `https://localhost:44370/api/`;
   
   constructor(private http:HttpClient) { }
 

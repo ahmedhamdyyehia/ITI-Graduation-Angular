@@ -22,6 +22,30 @@ select,
     color: orange
 }
 
+// .btn2{
+//     width: 30%;
+//     height: 40px;
+// }
+
+.image :hover{
+    opacity: 1;
+    & bottom {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.hover-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgba(255,255,255,.5);
+    opacity: 0;
+    transition: all .5s;
+}
+
 .fa-search {
     font-size: 20px;
     padding: 10px;
