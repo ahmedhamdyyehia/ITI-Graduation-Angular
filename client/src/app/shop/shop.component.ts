@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ShopService } from './shop.service';
 import { IProduct } from './../shared/models/IProduct';
 import { IBrand } from './../shared/models/IBrand';
 import { IProductType } from './../shared/models/IProductType';
 import { ShopParams } from '../shared/models/ShopParams';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -19,7 +20,9 @@ export class ShopComponent implements OnInit {
   shopParams:ShopParams;
   totalCount:number;
   sortOptions:any[];
-  constructor(private shopService:ShopService) {
+  outerSearch:string;
+
+  constructor(private shopService:ShopService,private route: ActivatedRoute) {
     this.products = [];
     this.brands = [];
     this.types =[];
@@ -37,6 +40,11 @@ export class ShopComponent implements OnInit {
     this.getProducts();
     this.getBrands();
     this.getTypes();
+    
+    this.route.queryParams.subscribe(params => {
+      this.outerSearch = params['search'];
+      this.onSearch();
+  });
   }
 
   getProducts()
@@ -91,7 +99,12 @@ export class ShopComponent implements OnInit {
 
   onSearch()
   {
-    this.shopParams.search = this.searchTerm?.nativeElement.value;
+    if(this.outerSearch){
+      this.shopParams.search = this.outerSearch
+    }
+    else{
+      this.shopParams.search = this.searchTerm?.nativeElement.value;
+    }
     this.getProducts();
   }
 
