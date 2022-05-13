@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from './../../shop/shop.service';
 import { IProductType } from './../../shared/models/IProductType';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catigories',
@@ -10,7 +11,7 @@ import { IProductType } from './../../shared/models/IProductType';
 export class CatigoriesComponent implements OnInit {
 
   categories:IProductType[];
-  constructor(private shopShervice:ShopService) {
+  constructor(private shopShervice:ShopService, private route:Router) {
     this.categories =[];
    }
 
@@ -25,4 +26,8 @@ export class CatigoriesComponent implements OnInit {
     });
   }
 
+  goToCat(id:number)
+  {
+    this.route.navigateByUrl('/shop', { state: { id} });
+  }
 }
