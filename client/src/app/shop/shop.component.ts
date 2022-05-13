@@ -4,7 +4,7 @@ import { IProduct } from './../shared/models/IProduct';
 import { IBrand } from './../shared/models/IBrand';
 import { IProductType } from './../shared/models/IProductType';
 import { ShopParams } from '../shared/models/ShopParams';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -20,30 +20,44 @@ export class ShopComponent implements OnInit {
   shopParams:ShopParams;
   totalCount:number;
   sortOptions:any[];
-  outerSearch:string;
+  outerCategoryIdSelected:string;
 
-  constructor(private shopService:ShopService,private route: ActivatedRoute) {
+  constructor(private shopService:ShopService,
+    private route: ActivatedRoute,
+    private router: Router) {
     this.products = [];
     this.brands = [];
     this.types =[];
     this.shopParams = new ShopParams();
     this.totalCount =0;
+    this.outerCategoryIdSelected='';
 
     this.sortOptions =[
       {name:"Alphpetical" , value:"name"},
       {name:"Price: low to high" , value:"priceAsc"},
       {name:"Price: high to low" , value:"priceDesc"},
     ]
+    this.outerCategoryIdSelected = this.router.getCurrentNavigation().extras.state?.id;
    }
-
+ 
   ngOnInit(): void {
-    this.getProducts();
+    if(this.outerCategoryIdSelected === undefined){
+      this.getProducts();
+    }
+
     this.getBrands();
     this.getTypes();
+
+    if(this.outerCategoryIdSelected){
+      this.onTypeSelected(this.outerCategoryIdSelected);
+      this.outerCategoryIdSelected = undefined;
+    }
     
     this.route.queryParams.subscribe(params => {
-      this.outerSearch = params['search'];
-      this.onSearch();
+      if(params['search']){
+        this.shopParams.search = params['search'];
+        this.onSearch();
+      }
   });
   }
 
@@ -80,7 +94,13 @@ export class ShopComponent implements OnInit {
 
   onTypeSelected(typeId:any)
   {
+    if(this.outerCategoryIdSelected){
+      this.shopParams.typeId = Number(this.outerCategoryIdSelected);
+    }
+    else{
     this.shopParams.typeId = Number(typeId.value);
+    this.shopParams.search ='';
+    }
     this.getProducts();
   }
 
@@ -99,10 +119,7 @@ export class ShopComponent implements OnInit {
 
   onSearch()
   {
-    if(this.outerSearch){
-      this.shopParams.search = this.outerSearch
-    }
-    else{
+    if(this.searchTerm?.nativeElement.value){
       this.shopParams.search = this.searchTerm?.nativeElement.value;
     }
     this.getProducts();

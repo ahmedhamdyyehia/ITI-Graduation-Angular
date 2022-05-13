@@ -22,11 +22,6 @@ select,
     color: orange
 }
 
-// .btn2{
-//     width: 30%;
-//     height: 40px;
-// }
-
 .image :hover{
     opacity: 1;
     & bottom {
@@ -90,9 +85,21 @@ h6 {
     background-color: #fff
 }
 
+.btn2{
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
 .btn:hover {
     color: #fff;
     background-color: orange
+}
+
+.btn2:hover {
+    color: #fff;
+    background-color: lightgreen;
 }
 
 .card-body {
