@@ -4,6 +4,7 @@
         <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
             <input type="radio"
                 id={{method.id}}
+                (click)="setShippingPrice(method)"
                 value={{method.id}}
                 formControlName="deliveryMethod"
                 class="custom-control-input"
@@ -15,4 +16,12 @@
             </label>
         </div>
     </div>
+</div>
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+        <i class="fa fa-angle-left"></i> Back to address
+    </button>
+    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-primary" cdkStepperNext>
+        Go to review <i class="fa fa-angle-right"></i>
+    </button>
 </div>

@@ -27,7 +27,6 @@ import { BasketSummaryComponent } from './components/basket-summary/basket-summa
     StepperComponent,
     BasketSummaryComponent,
     ErrorPageComponent,
-    TextInputComponent,
     StepperComponent
     
   ],
@@ -38,8 +37,7 @@ import { BasketSummaryComponent } from './components/basket-summary/basket-summa
     ReactiveFormsModule,
     CdkStepperModule,
     RouterModule,
-    ReactiveFormsModule,
-    CdkStepperModule
+    ReactiveFormsModule
   ],
   exports:[
     PaginationModule,
@@ -50,7 +48,6 @@ import { BasketSummaryComponent } from './components/basket-summary/basket-summa
     BsDropdownModule,
     TextInputComponent,
     ErrorPageComponent,
-    TextInputComponent,
     CdkStepperModule,
     StepperComponent,
     BasketSummaryComponent
