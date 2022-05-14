@@ -11,7 +11,7 @@ import { IProduct } from '../shared/models/IProduct';
   providedIn: 'root'
 })
 export class BasketService {
-  baseUrl = environment.apiUrl;
+  private baseUrl = environment.apiUrl;
   private basketSource = new BehaviorSubject<IBasket>(null); // set it to null initial
 
   /*
@@ -26,8 +26,6 @@ export class BasketService {
 
   // a public property to be accessible from other components
  
-
-
   private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
   basketTotal$ = this.basketTotalSource.asObservable();
   shipping = 0;
