@@ -26,7 +26,8 @@ export class RegisterComponent implements OnInit {
       [this.validateEmailNotTaken()]
       ],
         password:[null,[Validators.required]],
-        role:[null,[Validators.required]]
+        Phone:[null,[Validators.required]],
+
     });
   }
   onSubmit(){
