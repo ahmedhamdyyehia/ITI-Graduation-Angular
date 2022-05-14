@@ -12,12 +12,13 @@ import { IBasketTotals } from '../shared/models/basket';
 })
 export class CheckoutComponent implements OnInit {
   checkoutForm: FormGroup;
-  basketTotals$: Observable<IBasketTotals>;
 
-  constructor(private fb: FormBuilder, private accountService: AccountService, private basketService: BasketService) { }
+
+  constructor(private fb: FormBuilder, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.createCheckoutForm();
+    this.getAddressFormValues();
     
   }
 
@@ -37,6 +38,15 @@ export class CheckoutComponent implements OnInit {
       paymentForm: this.fb.group({
         nameOnCard: [null, Validators.required]
       })
+    })
+  }
+  getAddressFormValues() {
+    this.accountService.getUserAddress().subscribe(address => {
+      if (address) {
+        this.checkoutForm.get('addressForm').patchValue(address);
+      }
+    }, error => {
+      console.log(error);
     })
   }
 

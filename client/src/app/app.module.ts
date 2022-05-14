@@ -11,6 +11,7 @@ import {NgxSpinnerModule} from 'ngx-spinner'
 import { LoadingInterceptor } from './core/intercepors/loading.interceptors';
 import { JwtInterceptor } from './core/intercepors/JWT.interceptor';
 import { ErrorInterceptor } from './core/intercepors/error.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ErrorInterceptor } from './core/intercepors/error.interceptor';
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass: LoadingInterceptor , multi:true},
