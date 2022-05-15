@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { OwlCarouselComponent } from './owl-carousel/owl-carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from '../shared/shared.module';
+import { CutTextPipe } from './Pipes/cut-text.pipe';
 
 @NgModule({
   declarations: [
     NavBarComponent,
-    OwlCarouselComponent
+    OwlCarouselComponent,
+    CutTextPipe
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports:[
     NavBarComponent,
-    OwlCarouselComponent
+    OwlCarouselComponent,
+    CutTextPipe
   ]
 })
 export class CoreModule { }

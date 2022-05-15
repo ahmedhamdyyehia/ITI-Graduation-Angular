@@ -6,7 +6,7 @@ import { SharedModule } from './../shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ShopRoutingModule } from './shop-routing.module';
 import { FormsModule } from '@angular/forms';
-
+import { CoreModule } from './../core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     ShopRoutingModule,
-    FormsModule
+    FormsModule,
+    CoreModule
   ]
 })
 export class ShopModule { }
