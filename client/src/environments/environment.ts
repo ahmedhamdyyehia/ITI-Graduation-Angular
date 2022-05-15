@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://localhost:7213/api/'
+  apiUrl:'https://localhost:7213/api/',
+  payUrl:'https://accept.paymobsolutions.com/api/auth/tokens'
 };
 
 /*
