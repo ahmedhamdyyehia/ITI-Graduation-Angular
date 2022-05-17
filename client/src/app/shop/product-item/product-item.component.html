@@ -1,6 +1,7 @@
 <div class="card h-100 shadow-sm">
   <div class="image position-relative">
     <img
+      style="height: 250px;"
       class="card-img-top img-fluid w-100"
       src="{{ this.product.pictureUrl }}"
     />
@@ -15,10 +16,10 @@
     </div>
   </div>
 
-  <div class="card-body">
+  <div class="card-body mt-3">
     <h6>
       <b>
-        <a routerLink="/shop/{{ this.product.id }}">{{ this.product.name }}</a>
+        <a routerLink="/shop/{{ this.product.id }}">{{ this.product.name | cutText}}</a>
       </b>
     </h6>
     <div class="d-flex flex-row my-2">
