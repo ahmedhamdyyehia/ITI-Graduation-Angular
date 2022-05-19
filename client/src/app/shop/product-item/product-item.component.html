@@ -1,7 +1,7 @@
 <div class="card h-100 shadow-sm">
   <div class="image position-relative">
     <img
-      style="height: 250px;"
+      style="height: 220px; width: 220px;"
       class="card-img-top img-fluid w-100"
       src="{{ this.product.pictureUrl }}"
     />
@@ -27,7 +27,7 @@
       <!-- <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div> -->
     </div>
     <button *ngIf="this.checkCart()" class="btn btn2 w-100 rounded my-2" (click)="addItemToBasket()">
-      Added
+      Added To Cart
     </button>
     <button *ngIf="!this.checkCart()" class="btn w-100 rounded my-2" (click)="addItemToBasket()">
         Add to cart

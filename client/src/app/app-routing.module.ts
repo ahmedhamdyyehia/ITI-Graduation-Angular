@@ -1,3 +1,6 @@
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -8,6 +11,9 @@ import { ErrorPageComponent } from './shared/components/error-page/error-page.co
 
 const routes: Routes = [
   {path:'' , component:HomeComponent},
+  {path:'contact' , component:ContactComponent},
+  {path:'about' , component:AboutComponent},
+  {path:'faq' , component:FaqComponent},
   {path:'shop' , loadChildren:()=>import("./shop/shop.module").then(mod=>mod.ShopModule) },
   {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule) },
   {path: 'checkout' , canActivate:[AuthGuard], loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule) },
