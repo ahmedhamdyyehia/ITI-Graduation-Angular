@@ -5,3 +5,42 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+.page-item.active .page-link{
+    z-index: 3;
+    color: #fff;
+    background-color: rgb(255, 170, 0);
+    border-color: #eaeaea;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: orange;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color:darkorange;
+}
+.btn-outline-warning {
+    color: darkorange;
+    border-color: #ffc107;
+}
+
+
+.btn-warning {
+    color: #000;
+    background-color:darkorange;
+
+    border-color: #ffc107;
+}
+
+.text-warning{
+    color: darkorange;
+    
+}
