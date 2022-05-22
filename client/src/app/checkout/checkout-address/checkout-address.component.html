@@ -11,32 +11,32 @@
         </button>
     </div>
     <div class="row" formGroupName="addressForm">
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'First name'" formControlName="firstName"></app-text-input>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'Last name'" formControlName="lastName"></app-text-input>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'Street'" formControlName="street"></app-text-input>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'City'" formControlName="city"></app-text-input>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'State'" formControlName="state"></app-text-input>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6 pt-2">
             <app-text-input [label]="'Zip code'" formControlName="zipCode"></app-text-input>
         </div>
     </div>
 </div>
 
-<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
-    <button class="btn btn-outline-primary" routerLink="/basket">
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5 pt-4">
+    <button class="btn btn-outline-warning w-50 me-3" routerLink="/basket">
         <i class="fa fa-angle-left"></i> Back to basket
     </button>
-    <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-primary" cdkStepperNext>
+    <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-warning me-3 w-50" cdkStepperNext>
         Go to delivery <i class="fa fa-angle-right"></i>
     </button>
 </div>

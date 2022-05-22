@@ -1,14 +1,12 @@
 <div class="mt-4" [formGroup]="checkoutForm">
-    <h4 class="mb-3">Choose your delivery method</h4>
+    <h4 class="mb-3 fw-bold text-decoration-underline">Choose your delivery method</h4>
+    
+    <hr>
+
     <div class="row" formGroupName="deliveryForm">
         <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
-            <input type="radio"
-                id={{method.id}}
-                (click)="setShippingPrice(method)"
-                value={{method.id}}
-                formControlName="deliveryMethod"
-                class="custom-control-input"
-            >
+            <input type="radio" id={{method.id}} (click)="setShippingPrice(method)" value={{method.id}}
+                formControlName="deliveryMethod" class="custom-control-input pt-3">
             <label for="{{method.id}}" class="custom-control-label">
                 <strong>{{method.shortName}} - {{method.price | currency}}</strong>
                 <br />
@@ -17,11 +15,13 @@
         </div>
     </div>
 </div>
+<br>
+<hr>
 <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
-    <button class="btn btn-outline-primary" cdkStepperPrevious>
+    <button class="btn btn-outline-warning w-50 me-3" cdkStepperPrevious>
         <i class="fa fa-angle-left"></i> Back to address
     </button>
-    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-primary" cdkStepperNext>
+    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-warning w-50 " cdkStepperNext>
         Go to review <i class="fa fa-angle-right"></i>
     </button>
 </div>

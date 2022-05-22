@@ -12,10 +12,16 @@ import { LoadingInterceptor } from './core/intercepors/loading.interceptors';
 import { JwtInterceptor } from './core/intercepors/JWT.interceptor';
 import { ErrorInterceptor } from './core/intercepors/error.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent,
+    AboutComponent,
+    FaqComponent
   ],
   imports: [
   BrowserModule,
