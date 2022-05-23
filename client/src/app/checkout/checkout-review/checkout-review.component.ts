@@ -105,6 +105,7 @@ export class CheckoutReviewComponent implements OnInit {
             'Content-Type': 'application/json'}
         })
         .then(function myFunction(response) {console.log("3",response.data)
+        
                                             
           location.replace(`https://accept.paymobsolutions.com/api/acceptance/iframes/349151?payment_token=${response.data.token}`) 
         console.log("final",`https://accept.paymobsolutions.com/api/acceptance/iframes/349151?payment_token=${response.data.token}`);
