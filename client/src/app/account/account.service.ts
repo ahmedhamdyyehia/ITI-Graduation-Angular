@@ -38,6 +38,7 @@ export class AccountService {
   }
   
   login(values:any){
+    console.log(values);
     return this.http.post(this.baseUrl +'account/login',values).pipe(
       map((user:IUser) =>{
         if(user){
